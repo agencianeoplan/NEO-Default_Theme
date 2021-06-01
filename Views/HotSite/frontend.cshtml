@@ -1,0 +1,93 @@
+@{
+    ViewBag.Title = "Front End";
+    Layout = "~/Views/Shared/Base/_Layout.cshtml";
+}
+
+<div class="ui container">
+
+  <div style="padding: 40px 0"></div>
+
+  <div class="ui grid two column stackable">
+
+    <form class="ui form eight wide column" id="formFrontEnd">
+
+      <h2 class="ui dividing header">Deixe o seu recado</h2>
+
+      <div class="field">
+        <label>Nome</label>
+        <input type="text" name="nome" maxlength="64" data-debug="debugNome">
+      </div>
+
+      <div class="two fields">
+
+        <div class="field">
+          <label>E-mail</label>
+          <input type="email" name="email" maxlength="128" data-debug="debugEmail">
+        </div>
+
+        <div class="field">
+          <label>Telefone</label>
+          @* A classe "mask_phone" não foi usada, veja o motivo dentro da função "jetDebug" no arquivo /resources/js/functions/utilitariosDaProva.js *@
+          @* <input type="tel" name="telefone" class="mask_phone" maxlength="15" data-debug="debugTelefone"> *@
+          <input type="tel" name="telefone" maxlength="15" data-debug="debugTelefone">
+        </div>
+
+      </div>
+
+      <div class="field">
+        <label>Assunto</label>
+        <input type="text" name="assunto" maxlength="64" data-debug="debugAssunto">
+      </div>
+
+      <div class="field">
+        <label>Mensagem</label>
+        <textarea name="mensagem" maxlength="1024" data-debug="debugMensagem"></textarea>
+      </div>
+
+      <button type="submit" class="ui submit primary button">Enviar</button>
+
+      <div class="ui error message"></div>
+    </form>
+
+    <div class="eight wide column">
+
+      <h2 class="ui dividing header">Debug</h2>
+
+      <table class="ui celled table">
+        <thead>
+          <tr>
+            <th>Campo</th>
+            <th>Valor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Campo">Nome</td>
+            <td data-label="Valor" id="debugNome">...</td>
+          </tr>
+          <tr>
+            <td data-label="Campo">E-mail</td>
+            <td data-label="Valor" id="debugEmail">...</td>
+          </tr>
+          <tr>
+            <td data-label="Campo">Telefone</td>
+            <td data-label="Valor" id="debugTelefone">...</td>
+          </tr>
+          <tr>
+            <td data-label="Campo">Assunto</td>
+            <td data-label="Valor" id="debugAssunto">...</td>
+          </tr>
+          <tr>
+            <td data-label="Campo">Mensagem</td>
+            <td data-label="Valor" id="debugMensagem">...</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+
+  <div style="padding: 40px 0"></div>
+
+</div>
